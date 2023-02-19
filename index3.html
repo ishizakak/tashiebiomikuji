@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title >おみくじ</title>
+<link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class = "container">
+        <p class = "midashi">たしえびおみくじ</p>
+        <button onclick="draw()">おみくじを引く</button>
+
+        <p>
+            <img id = "image" width = "250" height = "200"/>
+        </p>
+        
+         <button onclick="reset()">戻る</button>
+
+    </div>
+    <script>
+        
+        function draw(){
+           x = Math.floor(Math.random()*6)
+            console.log(x)
+            if(x == 0){
+                document.getElementById("image").src = "./images/kami.png";
+            }else if(x == 1){
+                document.getElementById("image").src = "./images/daikichi.png";
+            }else if(x == 2){
+                document.getElementById("image").src = "./images/chukichi.png";
+            }else if(x == 3){
+                document.getElementById("image").src = "./images/kichi.png";
+            }else if(x == 4){
+                document.getElementById("image").src = "./images/shokichi.png";
+            }else {
+            document.getElementById("image").src = "./images/kyou.png";
+            }
+            
+        }
+        
+        function reset(){
+            document.getElementById("image").src = "./images/start.png";
+        }
+                        
+    </script>
+</body>
